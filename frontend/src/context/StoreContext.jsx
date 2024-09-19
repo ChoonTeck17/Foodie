@@ -10,7 +10,7 @@ const StoreContextProvider =(props) => {
     //This function is add to cart, add the cart items value by 1
     const addToCart = (itemId) => {
         if(!cartItems[itemId]){
-            setCartItems((pre)=>({...prev,[itemId]:1}))
+            setCartItems((prev)=>({...prev,[itemId]:1}))
         }
         else{
             setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
@@ -34,11 +34,11 @@ const StoreContextProvider =(props) => {
         removeFromCart
     }
     
-    // return (
-    //     <StoreContext.Provider value = {contextValue}>
-    //         {props.children}
-    //     </StoreContext.Provider>
-    // )
+    return (
+        <StoreContext.Provider value = {contextValue}>
+            {props.children}
+        </StoreContext.Provider>
+    )
 }
 
 export default StoreContextProvider
