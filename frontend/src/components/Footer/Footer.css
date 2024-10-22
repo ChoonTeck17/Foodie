@@ -13,14 +13,14 @@
     width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap:80px;
+    gap:430px;
 }
 
 .footer-content-left, .footer-content-right, .footer-content-center{
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 30px;
+    gap: 20px;
 }
 
 .footer-content-left li, .footer-content-right li , .footer-content-center li{
