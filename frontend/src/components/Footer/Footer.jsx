@@ -32,6 +32,7 @@ export const Footer = () => {
                   </ul>
                 </div>
             </div>
+
         <hr/>
         <p className="footer-copyright">no steal bro</p>
     </div>
