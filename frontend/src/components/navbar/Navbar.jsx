@@ -22,7 +22,8 @@ import { Link } from 'react-router-dom';
                 <img src={assets.basket_icon} alt="" className="" />
                 <div className="dot"></div>
             </div>
-            <button onClick={()=>setShowLogin(true)}>Sign In</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={()=>setShowLogin(true)}>Sign In</button>
+            
         </div>
      </div>
    )
