@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
         </ul>
         <div className="navbar-right">
             <img src={assets.search_icon} alt=""  />
-            <div className="navbar-search-icon">
+            <div className="navbar-search-icon"> 
                 <img src={assets.basket_icon} alt="" className="" />
                 <div className="dot"></div>
             </div>
