@@ -3,7 +3,7 @@ import Navbar from './components/navbar/Navbar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home'
 import Cart from './pages/Cart/Cart'
-import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
+import Order from './pages/Order/Order'
 import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 
@@ -17,7 +17,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/Cart' element={<Cart/>}/>
-          <Route path='/Order' element={<PlaceOrder/>}/>
+          <Route path='/Order' element={<Order/>}/>
         </Routes>
       </div>
       <Footer/>
