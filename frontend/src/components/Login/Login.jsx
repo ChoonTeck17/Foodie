@@ -2,20 +2,25 @@ import React, { useState } from 'react'
 import './login.css'
 import { assets } from '../../assets/assets'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWindowClose  } from '@fortawesome/free-solid-svg-icons'; // Close icon
+import { faL, faWindowClose  } from '@fortawesome/free-solid-svg-icons'; // Close icon
 
 
 
 const Login = () => {
 
   const[currState,setCurrState] = useState("Login")
+  const [showLogin, setShowLogin] = useState(false);
+
   return (
+
+    
     <div className="absolute inset-0 z-10 bg-black bg-opacity-60 flex items-center justify-center">
       <form className="self-center w-[23vw] min-w-[330px] text-gray-500 bg-white flex flex-col gap-6 p-6 rounded-lg text-sm animate-fadeIn">
         <div className="flex items-center justify-between relative">
         <h2 className="font-bold tracking-wide text-3xl text-black absolute left-1/2 transform -translate-x-1/2 text-center">Login</h2>
         {/* <img onClick={() => setShowLogin(false)} src={assets.cross_icon} alt="Close" className="cursor-pointer ml-auto" /> */}
-        <FontAwesomeIcon icon={faWindowClose } className="cursor-pointer ml-auto text-3xl text-red-500" aria-hidden="true" />
+
+        <FontAwesomeIcon icon={faWindowClose } className="cursor-pointer ml-auto text-3xl text-red-500" aria-hidden="true" onClick={()=> setShowLogin(false)} />
         </div>
         
         <div className="flex flex-col gap-2">
