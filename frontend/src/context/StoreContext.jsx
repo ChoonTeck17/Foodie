@@ -1,58 +1,57 @@
 import { createContext, useEffect, useState } from "react";
 import { food_list } from "../assets/assets";
 
-export const StoreContext = createContext(null)
+export const StoreContext = createContext(null);
 
-const StoreContextProvider =(props) => {
+const StoreContextProvider = (props) => {
+  const [cartItems, setCartItems] = useState({});
 
-    const [cartItems, setCartItems] = useState({});
+  // Add items to cart with a specific quantity
+  const addToCart = (itemId, quantity = 1) => {
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: (prev[itemId] || 0) + quantity, // Increment by the specified quantity
+    }));
+  };
 
-    //This function is add to cart, add the cart items value by 1
-    const addToCart = (itemId) => {
-        if(!cartItems[itemId]){
-            setCartItems((prev)=>({...prev,[itemId]:1}))
-        }
-        else{
-            setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
-        }
+  // Remove one item from the cart
+  const removeFromCart = (itemId) => {
+    setCartItems((prev) => {
+      if (!prev[itemId]) return prev; // No item to remove
+      const updatedCart = { ...prev, [itemId]: prev[itemId] - 1 };
+      if (updatedCart[itemId] <= 0) {
+        delete updatedCart[itemId]; // Remove the item if quantity is zero or less
+      }
+      return updatedCart;
+    });
+  };
+
+  // Calculate the total cart amount
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for (const itemId in cartItems) {
+      if (cartItems[itemId] > 0) {
+        const itemInfo = food_list.find((product) => product._id === itemId);
+        totalAmount += itemInfo.price * cartItems[itemId];
+      }
     }
+    return totalAmount;
+  };
 
-    //This function is remove from cart, reduce the cart items value by 1
-    const removeFromCart = (itemId) =>{
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
-    }
+  const contextValue = {
+    food_list,
+    cartItems,
+    setCartItems,
+    addToCart,
+    removeFromCart,
+    getTotalCartAmount,
+  };
 
-    // useEffect(()=>{
-    //     console.log(cartItems);
-    // }, [cartItems])
+  return (
+    <StoreContext.Provider value={contextValue}>
+      {props.children}
+    </StoreContext.Provider>
+  );
+};
 
-
-    const getTotalCartAmount = () =>{
-        let TotalAmount = 0;
-        for(const item in cartItems)
-        {   
-            if(cartItems[item]>0){
-            let itemInfo = food_list.find((Product)=>Product._id === item);
-            TotalAmount += itemInfo.price* cartItems[item];
-        }
-    }
-    return TotalAmount; 
-}
-
-    const contextValue = {
-        food_list,
-        cartItems,
-        setCartItems,
-        addToCart,
-        removeFromCart,
-        getTotalCartAmount
-    }
-    
-    return (
-        <StoreContext.Provider value = {contextValue}>
-            {props.children}
-        </StoreContext.Provider>
-    )
-}
-
-export default StoreContextProvider
+export default StoreContextProvider;
