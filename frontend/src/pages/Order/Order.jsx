@@ -29,32 +29,38 @@ const Order = () => {
         <input type="text" placeholder='Phone' className="mb-4 w-full p-2.5 border border-gray-300 rounded outline-none focus:outline-aqua"/>
       </div>
 
-      <div className="right">
-      <div className="cart-total flex-1 flex flex-col gap-6">
-        <h2 className="text-2xl font-bold">Cart Totals</h2>
-          <div className="space-y-4">
-            <div className="cart-total-details flex justify-between text-gray-600">
+      <div className="mt-12 px-6 lg:px-12">
+        <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">Cart Totals</h2>
+
+          <div className="space-y-6">
+            <div className="flex justify-between items-center text-gray-600 text-lg">
               <p>Subtotal</p>
               <p>${getTotalCartAmount()}</p>
             </div>
-            <hr className="border-t border-gray-300" />
-            <div className="cart-total-details flex justify-between text-gray-600">
+            <hr className="border-gray-300" />
+            <div className="flex justify-between items-center text-gray-600 text-lg">
               <p>Delivery Fee</p>
-              <p>${getTotalCartAmount()===0?0:2}</p>
+              <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
             </div>
-            <hr className="border-t border-gray-300" />
-            <div className="cart-total-details flex justify-between text-gray-800 font-semibold">
+            <hr className="border-gray-300" />
+            <div className="flex justify-between items-center text-gray-800 font-semibold text-xl">
               <p>Total</p>
-              <p>${getTotalCartAmount()===0?0: getTotalCartAmount() + 2}</p>
+              <p>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</p>
             </div>
           </div>
-          <div className="flex justify-center mt-4">
-            <button className="text-white bg-orange-400 w-full max-w-sm py-3 rounded-lg font-bold hover:bg-orange-500 transition-all duration-200 mt-10" onClick={() => navigate('/DoneOrder')}>
+
+          <div className="flex justify-center mt-8">
+            <button
+              className="text-white bg-orange-500 w-full max-w-xl py-4 rounded-lg font-bold hover:bg-orange-600 transition-all duration-200"
+              onClick={() => navigate('/DoneOrder')}>
               Proceed to Payment
             </button>
           </div>
+        </div>
       </div>
-      </div>
+
+
 
     </form>
   )
