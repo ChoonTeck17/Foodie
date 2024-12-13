@@ -54,7 +54,7 @@ const Order = () => {
             <button
               className="text-white bg-orange-500 w-full max-w-xl py-4 rounded-lg font-bold hover:bg-orange-600 transition-all duration-200"
               onClick={() => navigate('/DoneOrder')}>
-              Proceed to Payment
+              Proceed to Paysssment
             </button>
           </div>
         </div>
