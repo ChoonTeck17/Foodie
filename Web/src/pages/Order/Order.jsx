@@ -45,7 +45,7 @@ const Order = () => {
             </div>
             <hr className="border-gray-300" />
             <div className="flex justify-between items-center text-gray-800 font-semibold text-xl">
-              <p>Total</p>
+              <p>Toasdasddtal</p>
               <p>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</p>
             </div>
           </div>
