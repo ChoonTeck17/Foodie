@@ -45,7 +45,7 @@ const Order = () => {
             </div>
             <hr className="border-gray-300" />
             <div className="flex justify-between items-center text-gray-800 font-semibold text-xl">
-              <p>Toasdasddtal</p>
+              <p>Total</p>
               <p>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</p>
             </div>
           </div>
@@ -54,7 +54,7 @@ const Order = () => {
             <button
               className="text-white bg-orange-500 w-full max-w-xl py-4 rounded-lg font-bold hover:bg-orange-600 transition-all duration-200"
               onClick={() => navigate('/DoneOrder')}>
-              Proceed to Paysssment
+              Proceed to Payment
             </button>
           </div>
         </div>
