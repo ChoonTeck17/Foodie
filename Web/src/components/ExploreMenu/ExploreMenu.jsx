@@ -21,7 +21,7 @@ export const ExploreMenu = ({ category, setCategory }) => {
             <img
               src={item.menu_image}
               alt=""
-              className={`w-[20vw] sm:w-[15vw] md:w-[10vw] lg:w-[8vw] min-w-[80px] max-w-[150px] rounded-full transition-all duration-200 ${
+              className={`w-[18vw] sm:w-[13vw] md:w-[9vw] lg:w-[7vw] min-w-[70px] max-w-[130px] rounded-full transition-all duration-200 ${
                 category === item.menu_name ? 'border-4 border-tomato p-[2px]' : ''
               }`}
             />

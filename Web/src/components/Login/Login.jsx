@@ -10,9 +10,9 @@ const Login = () => {
   return (
     <>
       {/* Button to open the login popout */}
-      <button onClick={() => setShowLogin(true)} className="bg-blue-500 text-white p-2 rounded">
+      {/* <button onClick={() => setShowLogin(true)} className="bg-blue-500 text-white p-2 rounded">
         Open Login
-      </button>
+      </button> */}
 
       {showLogin && (
         <div className="absolute inset-0 z-10 bg-black bg-opacity-60 flex items-center justify-center">
