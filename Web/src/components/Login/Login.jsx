@@ -1,58 +1,37 @@
 import React, { useState } from 'react'
-import './login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons'; // Close icon
 
+
 const Login = () => {
   const [currState, setCurrState] = useState("Login")
-  const [showLogin, setShowLogin] = useState(false);
+  // const [showLogin, setShowLogin] = useState(false);
 
   return (
     <>
       {/* Button to open the login popout */}
-      {/* <button onClick={() => setShowLogin(true)} className="bg-blue-500 text-white p-2 rounded">
+       {/* <button onClick={() => setShowLogin(true)} className="bg-blue-500 text-white p-2 rounded">
         Open Login
-      </button> */}
+      </button>  */}
 
-      {showLogin && (
         <div className="absolute inset-0 z-10 bg-black bg-opacity-60 flex items-center justify-center">
           <form className="self-center w-[23vw] min-w-[330px] text-gray-500 bg-white flex flex-col gap-6 p-6 rounded-lg text-sm animate-fadeIn">
             <div className="flex items-center justify-between relative">
               <h2 className="font-bold tracking-wide text-3xl text-black absolute left-1/2 transform -translate-x-1/2 text-center">Login</h2>
-              <FontAwesomeIcon
-                icon={faWindowClose}
-                className="cursor-pointer ml-auto text-3xl text-red-500"
-                aria-hidden="true"
-                onClick={() => setShowLogin(false)}
-              />
+              <FontAwesomeIcon icon={faWindowClose} className="cursor-pointer ml-auto text-3xl text-red-500" aria-hidden="true" onClick={() => setShowLogin(false)}/>
             </div>
             
             <div className="flex flex-col gap-2">
               {currState === "Login" ? null : (
                 <>
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    required
-                    className="border border-gray-300 rounded px-3 py-2 w-full"
-                  />
+              <input type="text" placeholder="Your Name" required className="border border-gray-300 rounded px-3 py-2 w-full"/>
                   <br />
                 </>
               )}
               
-              <input
-                type="email"
-                placeholder="Your Email"
-                required
-                className="border border-gray-300 rounded px-3 py-2 w-full"
-              />
+              <input type="email" placeholder="Your Email" required className="border border-gray-300 rounded px-3 py-2 w-full"/>
               <br />
-              <input
-                type="password"
-                placeholder="Password"
-                required
-                className="border border-gray-300 rounded px-3 py-2 w-full"
-              />
+              <input type="password" placeholder="Password test" required className="border border-gray-300 rounded px-3 py-2 w-full"/>
               <br />
               
               <div className="flex justify-center">
@@ -78,7 +57,6 @@ const Login = () => {
             </div>
           </form>
         </div>
-      )}
     </>
   )
 }

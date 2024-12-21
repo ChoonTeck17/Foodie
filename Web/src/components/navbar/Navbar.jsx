@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
+import Login from "../Login/Login"; // Import Login modal component
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("Menu");
@@ -9,136 +10,147 @@ const Navbar = ({ setShowLogin }) => {
   const { getTotalCartAmount } = useContext(StoreContext);
 
   return (
-    <nav className="navbar py-4 px-6 lg:px-12 flex justify-between items-center bg-white shadow-md">
-      {/* Logo */}
-      <Link to="/">
-        <img src={assets.logo} alt="Logo" className="logo w-[100px] lg:w-[150px]" />
-      </Link>
 
-      {/* Desktop Menu */}
-      <ul className="hidden lg:flex list-none gap-8 text-[#49557e] text-lg">
-        <Link
-          to="/"
-          onClick={() => setMenu("Home")}
-          className={`hover:text-blue-600 transition-colors duration-300 ${
-            menu === "Home" ? "font-bold text-blue-600" : ""
-          }`}
-        >
-          Home
+      <nav className="navbar py-4 px-6 lg:px-12 flex justify-between items-center bg-white shadow-md">
+        {/* Logo */}
+        <Link to="/">
+          <img src={assets.logo} alt="Logo" className="logo w-[100px] lg:w-[150px]" />
         </Link>
-        <a
-          href="#explore-menu"
-          onClick={() => setMenu("Menu")}
-          className={`hover:text-blue-600 transition-colors duration-300 ${
-            menu === "Menu" ? "font-bold text-blue-600" : ""
-          }`}
-        >
-          Menu
-        </a>
-        <a
-          href="#app-download"
-          onClick={() => setMenu("Mobile")}
-          className={`hover:text-blue-600 transition-colors duration-300 ${
-            menu === "Mobile" ? "font-bold text-blue-600" : ""
-          }`}
-        >
-          Mobile App
-        </a>
-        <a
-          href="#footer"
-          onClick={() => setMenu("ContactUs")}
-          className={`hover:text-blue-600 transition-colors duration-300 ${
-            menu === "ContactUs" ? "font-bold text-blue-600" : ""
-          }`}
-        >
-          Contact Us
-        </a>
-      </ul>
 
-      {/* Mobile Menu Button */}
-      <button
-        className="lg:hidden text-[#49557e] focus:outline-none"
-        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-      >
-        <img src={assets.menu_icon} alt="Menu" className="w-6 h-6" />
-      </button>
-
-      {/* Right Section */}
-      <div className="navbar-right flex items-center gap-4 lg:gap-6">
-        <img src={assets.search_icon} alt="Search" className="w-5 h-5 lg:w-6 lg:h-6" />
-
-        <div className="relative">
-          <Link to="/cart">
-            <img src={assets.basket_icon} alt="Cart" className="w-5 h-5 lg:w-6 lg:h-6" />
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex list-none gap-8 text-[#49557e] text-lg">
+          <Link
+            to="/"
+            onClick={() => setMenu("Home")}
+            className={`hover:text-blue-600 transition-colors duration-300 ${
+              menu === "Home" ? "font-bold text-blue-600" : ""
+            }`}
+          >
+            Home
           </Link>
-          {getTotalCartAmount() !== 0 && (
-            <div className="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full"></div>
-          )}
-        </div>
+          <a
+            href="#explore-menu"
+            onClick={() => setMenu("Menu")}
+            className={`hover:text-blue-600 transition-colors duration-300 ${
+              menu === "Menu" ? "font-bold text-blue-600" : ""
+            }`}
+          >
+            Menu
+          </a>
+          <a
+            href="#app-download"
+            onClick={() => setMenu("Mobile")}
+            className={`hover:text-blue-600 transition-colors duration-300 ${
+              menu === "Mobile" ? "font-bold text-blue-600" : ""
+            }`}
+          >
+            Mobile App
+          </a>
+          <a
+            href="#footer"
+            onClick={() => setMenu("ContactUs")}
+            className={`hover:text-blue-600 transition-colors duration-300 ${
+              menu === "ContactUs" ? "font-bold text-blue-600" : ""
+            }`}
+          >
+            Contact Us
+          </a>
+        </ul>
 
+        {/* Mobile Menu Button */}
         <button
-          className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 text-sm lg:text-base"
-          onClick={() => setShowLogin(true)}>
-          Sign In
+          className="lg:hidden text-[#49557e] focus:outline-none"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <img src={assets.menu_icon} alt="Menu" className="w-6 h-6" />
         </button>
-      </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md lg:hidden">
-          <ul className="flex flex-col gap-4 p-4 text-[#49557e] text-base">
-            <Link
-              to="/"
-              onClick={() => {
-                setMenu("Home");
-                setIsMobileMenuOpen(false);
-              }}
-              className={`hover:text-blue-600 transition-colors duration-300 ${
-                menu === "Home" ? "font-bold text-blue-600" : ""
-              }`}
-            >
-              Home
+        {/* Right Section */}
+        <div className="navbar-right flex items-center gap-4 lg:gap-6">
+          <img
+            src={assets.search_icon}
+            alt="Search"
+            className="w-5 h-5 lg:w-6 lg:h-6"
+          />
+
+          <div className="relative">
+            <Link to="/cart">
+              <img
+                src={assets.basket_icon}
+                alt="Cart"
+                className="w-5 h-5 lg:w-6 lg:h-6"
+              />
             </Link>
-            <a
-              href="#explore-menu"
-              onClick={() => {
-                setMenu("Menu");
-                setIsMobileMenuOpen(false);
-              }}
-              className={`hover:text-blue-600 transition-colors duration-300 ${
-                menu === "Menu" ? "font-bold text-blue-600" : ""
-              }`}
-            >
-              Menu
-            </a>
-            <a
-              href="#app-download"
-              onClick={() => {
-                setMenu("Mobile");
-                setIsMobileMenuOpen(false);
-              }}
-              className={`hover:text-blue-600 transition-colors duration-300 ${
-                menu === "Mobile" ? "font-bold text-blue-600" : ""
-              }`}
-            >
-              Mobile App
-            </a>
-            <a
-              href="#footer"
-              onClick={() => {
-                setMenu("ContactUs");
-                setIsMobileMenuOpen(false);
-              }}
-              className={`hover:text-blue-600 transition-colors duration-300 ${
-                menu === "ContactUs" ? "font-bold text-blue-600" : ""
-              }`}
-            >
-              Contact Us
-            </a>
-          </ul>
+            {getTotalCartAmount() !== 0 && (
+              <div className="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full"></div>
+            )}
+          </div>
+
+          {/* Sign In Button */}
+          <button
+            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 text-sm lg:text-base"
+            onClick={() => setShowLogin(true)} // Open modal on click
+          >
+            Sign In
+          </button>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="absolute top-full left-0 w-full bg-white shadow-md lg:hidden">
+            <ul className="flex flex-col gap-4 p-4 text-[#49557e] text-base">
+              <Link
+                to="/"
+                onClick={() => {
+                  setMenu("Home");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`hover:text-blue-600 transition-colors duration-300 ${
+                  menu === "Home" ? "font-bold text-blue-600" : ""
+                }`}
+              >
+                Home
+              </Link>
+              <a
+                href="#explore-menu"
+                onClick={() => {
+                  setMenu("Menu");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`hover:text-blue-600 transition-colors duration-300 ${
+                  menu === "Menu" ? "font-bold text-blue-600" : ""
+                }`}
+              >
+                Menu
+              </a>
+              <a
+                href="#app-download"
+                onClick={() => {
+                  setMenu("Mobile");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`hover:text-blue-600 transition-colors duration-300 ${
+                  menu === "Mobile" ? "font-bold text-blue-600" : ""
+                }`}
+              >
+                Mobile App
+              </a>
+              <a
+                href="#footer"
+                onClick={() => {
+                  setMenu("ContactUs");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`hover:text-blue-600 transition-colors duration-300 ${
+                  menu === "ContactUs" ? "font-bold text-blue-600" : ""
+                }`}
+              >
+                Contact Us
+              </a>
+            </ul>
+          </div>
+        )}
+      </nav>
   );
 };
 
