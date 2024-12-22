@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons'; // Close icon
 
 
-const Login = ({setShowLogin}) => {
+const Login = () => {
   const [currState, setCurrState] = useState("Login")
   // const [showLogin, setShowLogin] = useState(false);
 
