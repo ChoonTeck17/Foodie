@@ -5,7 +5,7 @@ import { StoreContext } from "../../context/StoreContext";
 import Login from "../Login/Login"; // Import Login modal component
 
 const Navbar = ({ setShowLogin }) => {
-  const [menu, setMenu] = useState("Menu");
+  const [menu, setMenu] = useState("Home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { getTotalCartAmount } = useContext(StoreContext);
 
@@ -19,20 +19,12 @@ const Navbar = ({ setShowLogin }) => {
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex list-none gap-8 text-[#49557e] text-lg">
-          <Link
-            to="/"
-            onClick={() => setMenu("Home")}
-            className={`hover:text-blue-600 transition-colors duration-300 ${
-              menu === "Home" ? "font-bold text-blue-600" : ""
-            }`}
+          <Link to="/"
+            onClick={() => setMenu("Home")} className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Home" ? "font-bold text-blue-600" : ""}`}
           >
             Home
           </Link>
-          <a
-            href="#explore-menu"
-            onClick={() => setMenu("Menu")}
-            className={`hover:text-blue-600 transition-colors duration-300 ${
-              menu === "Menu" ? "font-bold text-blue-600" : ""
+          <a href="#explore-menu" onClick={() => setMenu("Menu")} className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Menu" ? "font-bold text-blue-600" : ""
             }`}
           >
             Menu
