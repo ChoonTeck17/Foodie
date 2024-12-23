@@ -7,6 +7,7 @@ import Order from './pages/Order/Order';
 import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import DoneOrder from './pages/DoneOrder/DoneOrder';
+import Menu from './pages/Menu/Menu';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false); // This state controls the login modal visibility
@@ -27,6 +28,7 @@ const App = () => {
           <Route path='/Cart' element={<Cart />} />
           <Route path='/Order' element={<Order />} />
           <Route path='/DoneOrder' element={<DoneOrder />} />
+          <Route path='/Menu' element={<Menu />} />
         </Routes>
       </div>
 

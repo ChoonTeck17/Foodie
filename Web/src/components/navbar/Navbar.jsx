@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
-import Login from "../Login/Login"; // Import Login modal component
+// import Login from "../Login/Login"; // Import Login modal component
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("Home");
@@ -24,16 +24,14 @@ const Navbar = ({ setShowLogin }) => {
           >
             Home
           </Link>
-          <a href="#explore-menu" onClick={() => setMenu("Menu")} className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Menu" ? "font-bold text-blue-600" : ""
-            }`}
+          <Link to="/Menu"
+            onClick={() => {setMenu("Menu"); setIsMobileMenuOpen(false);}} className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Menu" ? "font-bold text-blue-600" : ""}`}
           >
             Menu
-          </a>
+          </Link>
+
           <a
-            href="#app-download"
-            onClick={() => setMenu("Mobile")}
-            className={`hover:text-blue-600 transition-colors duration-300 ${
-              menu === "Mobile" ? "font-bold text-blue-600" : ""
+            href="#app-download" onClick={() => setMenu("Mobile")}className={`hover:text-blue-600 transition-colors duration-300 ${ menu === "Mobile" ? "font-bold text-blue-600" : ""
             }`}
           >
             Mobile App
