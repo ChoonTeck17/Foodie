@@ -20,6 +20,7 @@ const Home = () => {
       <Body category={category}/>
       {/* <ExploreMenu category={category} setCategory={setCategory}/> */}
       <AppDownload/>
+      
       <div style={{ padding: '0 24px' }}>
      
       </div>

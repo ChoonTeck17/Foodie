@@ -36,15 +36,11 @@ const Navbar = ({ setShowLogin }) => {
           >
             Mobile App
           </a>
-          <a
-            href="#footer"
-            onClick={() => setMenu("ContactUs")}
-            className={`hover:text-blue-600 transition-colors duration-300 ${
-              menu === "ContactUs" ? "font-bold text-blue-600" : ""
-            }`}
+          <Link to="/Faq"
+            onClick={() => {setMenu("Faq"); setIsMobileMenuOpen(false);}} className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Faq" ? "font-bold text-blue-600" : ""}`}
           >
-            Contact Us
-          </a>
+            Faq
+          </Link>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -128,14 +124,14 @@ const Navbar = ({ setShowLogin }) => {
               <a
                 href="#footer"
                 onClick={() => {
-                  setMenu("ContactUs");
+                  setMenu("Faq");
                   setIsMobileMenuOpen(false);
                 }}
                 className={`hover:text-blue-600 transition-colors duration-300 ${
-                  menu === "ContactUs" ? "font-bold text-blue-600" : ""
+                  menu === "Faq" ? "font-bold text-blue-600" : ""
                 }`}
               >
-                Contact Us
+                Faq
               </a>
             </ul>
           </div>

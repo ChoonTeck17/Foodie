@@ -51,7 +51,7 @@ export const Footer = () => {
           </ul>
         </div>
 
-        {/* Right Section - Contact Info */}
+        {/* Right Section - Faq Info */}
         <div className="flex flex-col gap-5">
           <h2 className="text-white text-lg font-semibold">Get in Touch</h2>
           <p className="text-sm leading-relaxed">
