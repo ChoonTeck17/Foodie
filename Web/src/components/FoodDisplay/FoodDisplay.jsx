@@ -1,7 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import { StoreContext } from '../../context/StoreContext';
 // import FoodItem from '../FoodItem/FoodItem';
 import Swal from 'sweetalert2';
+// import { cva, type VariantProps } from "class-variance-authority"
+ 
 
 
 export const FoodDisplay = ({ category }) => {
@@ -33,6 +35,9 @@ export const FoodDisplay = ({ category }) => {
     }));
   };
 
+
+ 
+
   return (
     <div className="mt-12 px-4 sm:px-6 lg:px-12" id="food-display">
       {/* Heading */}
@@ -47,7 +52,7 @@ export const FoodDisplay = ({ category }) => {
         </div>
       )} */}
 
-      
+
 
       {/* Food Cards Grid */}
       <div id="explore-menu" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

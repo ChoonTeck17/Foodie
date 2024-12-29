@@ -6,6 +6,7 @@ import FoodDisplay from '../../components/FoodDisplay/FoodDisplay';
 import { Button, Space, DatePicker, version, Dropdown } from 'antd';
 import AppDownload from '../../components/AppDownload/AppDownload';
 import Body from '../../components/Body/Body';
+import TopSection from '../../components/TopSection/TopSection';
 
 
 
@@ -16,6 +17,7 @@ const Home = () => {
   
   return (
     <div>
+      <TopSection/>
       <Header/>
       <Body category={category}/>
       {/* <ExploreMenu category={category} setCategory={setCategory}/> */}

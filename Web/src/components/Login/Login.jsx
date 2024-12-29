@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons'; // Close icon
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons'; 
+// import { cn } from "@/lib/utils"
+// import { buttonVariants } from "@/components/ui/button"
+// import confetti from 'canvas-confetti';// Close icon
 
 
 const Login = ({setShowLogin}) => {
   const [currState, setCurrState] = useState("Login")
+
+
   // const [showLogin, setShowLogin] = useState(false);
 
   return (
@@ -13,6 +18,8 @@ const Login = ({setShowLogin}) => {
        {/* <button onClick={() => setShowLogin(true)} className="bg-blue-500 text-white p-2 rounded">
         Open Login
       </button>  */}
+
+       
 
         <div className="absolute inset-0 z-10 bg-black bg-opacity-60 flex items-center justify-center">
           <form className="self-center w-[23vw] min-w-[330px] text-gray-500 bg-white flex flex-col gap-6 p-6 rounded-lg text-sm animate-fadeIn">

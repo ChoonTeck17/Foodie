@@ -1,89 +1,77 @@
-// Import React and useState
 import React, { useState } from "react";
 
-const FAQPage = () => {
-  // Define questions and answers
-  const faqs = [
+const Faq = () => {
+  const [openQuestion, setOpenQuestion] = useState(null);
+
+  const toggleQuestion = (index) => {
+    setOpenQuestion(openQuestion === index ? null : index);
+  };
+
+  const faqData = [
     {
-      question: "What ingredients do we use?",
-      answer: "We use only the freshest and highest-quality ingredients in all our products.",
-    },
-    {
-      question: "How do we ensure customer satisfaction?",
-      answer: "Customer satisfaction is our top priority. We have a dedicated support team and a no-questions-asked return policy.",
-    },
-    {
-      question: "Why choose us?",
-      answer: "We are committed to quality, innovation, and exceptional service that sets us apart from the competition.",
+      category: "FAQ's",
+      questions: [
+        {
+          question: "What ingredients do you use in your dishes?",
+          answer:
+            `We prioritize using the freshest, highest-quality ingredients available. Our menu features seasonal 
+            produce sourced from local farms whenever possible. We also use sustainable seafood, responsibly raised 
+            meats, and a variety of herbs and spices to create flavorful and wholesome dishes.`,
+        },
+        {
+          question: "Are you certified by any food safety or quality organizations?",
+          answer:
+            `Yes, we are committed to maintaining the highest standards of food safety and 
+            quality. We are certified by HACCP, ISO 22000, and multiple local health departments.`,
+        },
+        {
+          question: "How do you ensure customer satisfaction?",
+          answer:
+            `We strive to provide an exceptional dining experience for every guest. We are dedicated to providing 
+            prompt, friendly, and attentive service. We welcome feedback and are always ready to address any concerns 
+            or complaints promptly.`,
+        },
+      ],
     },
   ];
 
-  // Manage which FAQ is expanded
-  const [expandedIndex, setExpandedIndex] = useState(null);
-
-  // Toggle the visibility of the answer
-  const toggleFAQ = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
-
   return (
-    <>
-      <div className="bg-gradient-to-b from-blue-50 to-blue-100 min-h-screen flex flex-col items-center justify-center">
-        {/* FAQ Section */}
-        <div className="max-w-2xl w-full p-6 bg-white rounded-xl shadow-lg mb-12">
-          <h1 className="text-3xl font-extrabold text-center text-blue-800 mb-8">Frequently Asked Questions</h1>
-          {faqs.map((faq, index) => (
-            <div key={index} className="border-b border-gray-300 py-5">
-              <button
-                className="flex justify-between items-center w-full text-left focus:outline-none"
-                onClick={() => toggleFAQ(index)}
-              >
-                <span className="text-lg font-semibold text-blue-900">{faq.question}</span>
-                <svg
-                  className={`w-6 h-6 transition-transform duration-300 ${
-                    expandedIndex === index ? "rotate-180 text-blue-600" : "rotate-0 text-gray-600"
-                  }`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              {expandedIndex === index && (
-                <p className="mt-3 text-gray-700 text-base leading-relaxed">{faq.answer}</p>
-              )}
-            </div>
-          ))}
-        </div>
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="text-center mb-10">
+        <h1 className="text-4xl font-extrabold text-gray-800">About Tomato</h1>
+        <p className="mt-4 text-gray-600 text-lg leading-relaxed">
+          At <span className="font-bold text-green-600">Tomato</span>, we believe that exceptional dining shouldn't be mutually exclusive to a healthy lifestyle. 
+          That's why we created a menu featuring innovative, natural dishes that are as pleasing to the palate as they are nourishing.
+        </p>
       </div>
 
-      {/* How We Got Started Section */}
-      <div className="max-w-4xl w-full p-6 bg-white rounded-xl shadow-lg mb-12 flex flex-col items-center mx-auto">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-6 md:mb-0 md:mr-6">
-            <img
-              src="https://via.placeholder.com/400x300" 
-              alt="Our beginnings"
-              className="rounded-lg shadow-md"
-            />
-          </div>
-          <div className="md:w-1/2 text-center md:text-left">
-            <h2 className="text-2xl font-bold text-blue-800 mb-4">How and When We Started</h2>
-            <p className="text-gray-700 text-base leading-relaxed">
-              We began our journey in 2010 with a mission to bring quality products to our customers. Over the years, we have grown and evolved, always staying true to our values of excellence and customer focus.
-            </p>
+      {faqData.map((category, index) => (
+        <div key={index} className="mb-8">
+          <h2 className="text-2xl font-bold text-green-600 mb-4">{category.category}</h2>
+          <div className="space-y-4">
+            {category.questions.map((item, idx) => (
+              <div key={idx} className="border border-gray-300 rounded-lg shadow-sm">
+                <button
+                  onClick={() => toggleQuestion(`${index}-${idx}`)}
+                  className="w-full flex justify-between items-center px-6 py-4 text-left bg-gray-100 hover:bg-gray-200 transition-colors duration-200 rounded-lg focus:outline-none"
+                >
+                  <span className="text-gray-800 font-medium">{item.question}</span>
+                  <span className="text-gray-500">
+                    {openQuestion === `${index}-${idx}` ? "▲" : "▼"}
+                  </span>
+                </button>
+                {openQuestion === `${index}-${idx}` && (
+                  <div className="px-6 py-4 bg-white text-gray-700 border-t border-gray-200 rounded-b-lg">
+                    {item.answer}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </>
+      ))}
+    </div>
   );
 };
 
-export default FAQPage;
+export default Faq;
