@@ -14,7 +14,7 @@ const Order = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: 'onglai0801@gmail.com', // Replace with recipient's email
+          email: 'test@gmail.com', // Replace with recipient's email
           subject: 'Order Confirmation',
           message: `Thank you for your order! Your total is $${getTotalCartAmount() + 2}.`,
         }),
