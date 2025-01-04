@@ -4,6 +4,9 @@ import path from 'path'; // Import path module
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 3000,
+  },
   base: "/",
   plugins: [react()],
   resolve: {
