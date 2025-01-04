@@ -11,7 +11,7 @@ const DoneOrder = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
         <h2 className="text-3xl font-semibold text-center text-green-500 mb-6">
-          Order Placed Successfully!sssssssssssssssssssssssssssssssssssssss
+          Order Placed Successfully!
         </h2>
 
         <p className="text-xl text-center mb-6">

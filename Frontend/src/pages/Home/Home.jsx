@@ -21,7 +21,7 @@ const Home = () => {
       <Header/>
       <Body category={category}/>
       {/* <ExploreMenu category={category} setCategory={setCategory}/> */}
-      ssssssssssssssssssssssssssssssssssssssssss
+      
       <AppDownload/>
       
       <div style={{ padding: '0 24px' }}>
