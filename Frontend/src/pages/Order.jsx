@@ -14,9 +14,37 @@ const Order = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: 'test@gmail.com', // Replace with recipient's email
+          email: 'onglai0801@gmail.com', // Replace with recipient's email
           subject: 'Order Confirmation',
-          message: `Thank you for your order! Your total is $${getTotalCartAmount() + 2}.`,
+          html: `
+            <table style="width: 100%; background-color: #f8f9fa; padding: 20px; font-family: Arial, sans-serif;">
+              <tr>
+                <td>
+                  <table style="max-width: 600px; margin: 0 auto; background-color: red; padding: 20px; border-radius: 10px;">
+                    <tr>
+                      <td style="text-align: center; padding: 10px 0;">
+                        <h1 style="color: #333;">Order Confirmation</h1>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="color: #333; padding: 10px;">
+                        <p>Hello <strong>John Doe</strong>,</p>
+                        <p>Thank you for your order! Here are the details:</p>
+                        <p><strong>Address:</strong> 1234 Elm Street, Springfield</p>
+                        <p><strong>Total Amount:</strong> $${getTotalCartAmount() + 2}</p>
+                        <p>If you have any questions, feel free to contact us.</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: center; padding: 10px 0;">
+                        <p style="font-size: 0.9em; color: #666;">Thank you for shopping with us!</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          `, // HTML content for the email body
         }),
       });
 
@@ -28,7 +56,7 @@ const Order = () => {
         alert(`Failed to send email notification: ${data.message}`);
       }
     } catch (error) {
-      console.error('Error sending emaissl:', error);
+      console.error('Error sending email:', error);
       alert('Error sending email: ' + error.message);
     }
   };

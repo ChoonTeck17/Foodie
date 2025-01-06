@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 
 const AppDownload = () => {
   return (
-    <div id="app-download" className=" text-white py-16 px-8">
+    <div id="app-download" className=" text-black py-2 px-8">
       <div className="max-w-screen-lg mx-auto text-center">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">

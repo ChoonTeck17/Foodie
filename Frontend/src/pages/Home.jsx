@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import './Home.css'
 import Header from '../components/Header';
-import { ExploreMenu } from '../components/ExploreMenu';
-import FoodDisplay from '../components/FoodDisplay';
-import { Button, Space, DatePicker, version, Dropdown } from 'antd';
+// import { ExploreMenu } from '../components/ExploreMenu';
+// import FoodDisplay from '../components/FoodDisplay';
 import AppDownload from '../components/AppDownload';
 import Body from '../components/Body';
 import TopSection from '../components/TopSection';
