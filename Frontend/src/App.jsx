@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import Cart from './pages/Cart/Cart';
-import Order from './pages/Order/Order';
-import Footer from './components/Footer/Footer';
-import Login from './components/Login/Login';
-import DoneOrder from './pages/DoneOrder/DoneOrder';
-import Menu from './pages/Menu/Menu';
-import Faq from './pages/Faq/Faq';
+import Home from './pages/Home';
+import Cart from './pages/Cart';
+import Order from './pages/Order';
+import Footer from './components/Footer';
+import Login from './components/Login';
+import DoneOrder from './pages/DoneOrder';
+import Menu from './pages/Menu';
+import Faq from './pages/Faq';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false); // This state controls the login modal visibility

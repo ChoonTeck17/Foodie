@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
-import { assets } from "../../assets/assets";
+import { assets } from "../assets/assets";
 import { Link } from "react-router-dom";
-import { StoreContext } from "../../context/StoreContext";
+import { StoreContext } from "../context/StoreContext";
 // import Login from "../Login/Login"; // Import Login modal component
 
 const Navbar = ({ setShowLogin }) => {
@@ -53,11 +53,7 @@ const Navbar = ({ setShowLogin }) => {
 
         {/* Right Section */}
         <div className="navbar-right flex items-center gap-4 lg:gap-6">
-          <img
-            src={assets.search_icon}
-            alt="Search"
-            className="w-5 h-5 lg:w-6 lg:h-6"
-          />
+      
 
           <div className="relative">
             <Link to="/cart">
@@ -72,13 +68,7 @@ const Navbar = ({ setShowLogin }) => {
             )}
           </div>
 
-          {/* Sign In Button */}
-          <button
-            className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 text-sm lg:text-base"
-            onClick={() => setShowLogin(true)} // Open modal on click
-          >
-            Sign In
-          </button>
+
         </div>
 
         {/* Mobile Menu */}

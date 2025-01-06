@@ -1,5 +1,5 @@
 import React, { useContext, useState, useRef } from 'react';
-import { StoreContext } from '../../context/StoreContext';
+import { StoreContext } from '../context/StoreContext';
 // import FoodItem from '../FoodItem/FoodItem';
 import Swal from 'sweetalert2';
 // import { cva, type VariantProps } from "class-variance-authority"

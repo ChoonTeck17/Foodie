@@ -1,7 +1,7 @@
 import React from "react";
-import goldImage from "../../assets/Gold.jpg";
-import happyImage from "../../assets/happy.jpeg";
-import thumbsImage from "../../assets/thumbs.jpg";
+import goldImage from "../assets/Gold.jpg";
+import happyImage from "../assets/happy.jpeg";
+import thumbsImage from "../assets/thumbs.jpg";
 
 const Body = () => {
   const achievements = [
