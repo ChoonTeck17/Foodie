@@ -42,7 +42,7 @@ const Order = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: 'onglai0801@gmail.com',
+          email: 'onglai0801@gmail.com', // Replace with recipient's email
           subject: 'Order Confirmation',
           html: `
             <table style="width: 100%; background-color: #f8f9fa; padding: 20px; font-family: Arial, sans-serif;">
