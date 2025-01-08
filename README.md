@@ -1,2 +1,2 @@
-Food website using tailwindcss and react
+Food website using tailwindcss, react and nodemailer
 
