@@ -10,7 +10,7 @@ export const ExploreMenu = ({ category, setCategory }) => {
       </h1>
 
       {/* Menu Items */}
-      <div className="flex flex-wrap justify-center gap-5 sm:gap-8 md:gap-10 lg:gap-12">
+      <div className="flex flex-wrap justify-center gap-5 sm:gap-8 md:gap-10 lg:gap-10">
         {menu_list.map((item, index) => (
           <div
             key={index}
