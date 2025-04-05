@@ -18,26 +18,31 @@ const Navbar = ({ setShowLogin }) => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex list-none gap-8 text-[#49557e] text-lg">
-          <Link to="/"
-            onClick={() => setMenu("Home")} className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Home" ? "font-bold text-blue-600" : ""}`}
+        <ul className="hidden lg:flex list-none gap-8 text-[#49557e] text-lg absolute left-1/2 transform -translate-x-1/2">
+          <Link
+            to="/"
+            onClick={() => setMenu("Home")}
+            className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Home" ? "font-bold text-blue-600" : ""}`}
           >
             Home
           </Link>
-          <Link to="/Menu"
-            onClick={() => {setMenu("Menu"); setIsMobileMenuOpen(false);}} className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Menu" ? "font-bold text-blue-600" : ""}`}
+          <Link
+            to="/Menu"
+            onClick={() => {
+              setMenu("Menu");
+              setIsMobileMenuOpen(false);
+            }}
+            className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Menu" ? "font-bold text-blue-600" : ""}`}
           >
             Menu
           </Link>
-
-          <a
-            href="#app-download" onClick={() => setMenu("Mobile")}className={`hover:text-blue-600 transition-colors duration-300 ${ menu === "Mobile" ? "font-bold text-blue-600" : ""
-            }`}
-          >
-            Mobile App
-          </a>
-          <Link to="/Faq"
-            onClick={() => {setMenu("Faq"); setIsMobileMenuOpen(false);}} className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Faq" ? "font-bold text-blue-600" : ""}`}
+          <Link
+            to="/Faq"
+            onClick={() => {
+              setMenu("Faq");
+              setIsMobileMenuOpen(false);
+            }}
+            className={`hover:text-blue-600 transition-colors duration-300 ${menu === "Faq" ? "font-bold text-blue-600" : ""}`}
           >
             Faq
           </Link>
