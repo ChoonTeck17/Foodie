@@ -9,7 +9,7 @@ export default defineConfig({
   },
   base: "/",
   plugins: [react()],
-  base: process.VITE_BASE_PATH || "Food-Website".
+  // base: process.VITE_BASE_PATH || "Food-Website",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'), // Use @ as the alias for the src directory
