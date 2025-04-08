@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-=======
 import { useNavigate } from 'react-router-dom';
->>>>>>> e9e656f7a63c51abb28f743be0757eb9c7f48088
 
 const Header = () => {
   const navigate = useNavigate();
@@ -25,26 +21,12 @@ const Header = () => {
         <p className="text-white text-[1vw] sm:hidden">
           Choose your food bro
         </p>
-<<<<<<< HEAD
-        <Link
-          to="/Menu"
-          onClick={() => {
-            setMenu("Menu");
-            setIsMobileMenuOpen(false);
-          }}
-        >
-          <button className="bg-white text-gray-500 font-medium rounded-full px-[1.5vw] py-[0.6vw] text-[max(0.8vw,12px)] sm:px-[3vw] sm:py-[1.2vw]">
-            View Menu
-          </button>
-        </Link>
-=======
         <button
         className="bg-white text-gray-500 font-medium rounded-full px-[1.5vw] py-[0.6vw] text-[max(0.8vw,12px)] sm:px-[3vw] sm:py-[1.2vw]"
         onClick={handleViewMenu}
       >
         View Menu
       </button>
->>>>>>> e9e656f7a63c51abb28f743be0757eb9c7f48088
       </div>
     </div>
   );
