@@ -9,7 +9,7 @@ const TopSection = () => {
     <h1 className="text-8xl font-bold text-center mb-4">
       Our culinary journey <br /> from A to Z
     </h1>
-    <p className="text-4xl  text-center text-gray-800">
+    <p className="text-4xl  text-center text-gray-800 mb-8">
       Join us for daily reflections and delicious dishes
     </p>
     

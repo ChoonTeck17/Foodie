@@ -3,7 +3,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const app = express();
-const port = 5001;
+const port = 5000;
 
 // Debugging logs to verify environment variables
 console.log('EMAIL_USER:', process.env.EMAIL_USER);
@@ -21,14 +21,14 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/send-email', async (req, res) => {
-  console.log('Incoming request:', req.body);
+  console.log('Incoming request:', req.body); // Debug request body
 
   const { email, subject, html } = req.body;
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: email, // This will use whatever email is sent in the request body
+    to: email,
     subject,
-    html,
+    html, // Use HTML content for the email body
   };
 
   try {
@@ -36,8 +36,9 @@ app.post('/send-email', async (req, res) => {
     console.log('Email sent successfully:', info);
     res.status(200).json({ success: true, message: 'Email sent successfully!' });
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Error sending email:', error); // Log the detailed error
     res.status(500).json({ success: false, message: 'Failed to send email.', error: error.message });
   }
 });
+
 app.listen(port, () => console.log(`Server running on port ${port}`));
