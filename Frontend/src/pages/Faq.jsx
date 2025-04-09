@@ -12,7 +12,7 @@ const Faq = () => {
       category: "FAQ's",
       questions: [
         {
-          question: "What ingredients do you use in your dishes?",
+          question: "What ingredients do you use in your dishessssssssssssssssssssssssss?",
           answer:
             `We prioritize using the freshest, highest-quality ingredients available. Our menu features seasonal 
             produce sourced from local farms whenever possible. We also use sustainable seafood, responsibly raised 
